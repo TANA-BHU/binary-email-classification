@@ -1,0 +1,28 @@
+<!-- templates/form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detection</title>
+</head>
+<body>
+    <h2>Phishing Detection Form</h2>
+    <form action="/predict_form" method="post">
+        <label for="text">Email Content:</label><br>
+        <textarea name="text" rows="6" cols="60" required></textarea><br><br>
+
+        <label for="model">Choose Model:</label>
+        <select name="model">
+            <option value="lr">Logistic Regression</option>
+            <option value="xgb">XGBoost</option>
+            <option value="dnn">DNN</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction Result:</h3>
+        <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
