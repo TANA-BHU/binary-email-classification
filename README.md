@@ -74,7 +74,7 @@ After training, check:
 ## Running the API
 
 ```bash
-uvicorn inference_api:app --reload
+python -m uvicorn inference_api:app --reload
 ```
 
 Then visit:
